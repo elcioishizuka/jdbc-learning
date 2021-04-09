@@ -30,9 +30,15 @@ public class JdbcExecutor {
 //
 //            customerDAO.create(customer);
 
-            Customer customer = customerDAO.findById(1000);
-            System.out.println(customer.getFirstName() + " " + customer.getLastName());
+//            Customer customer = customerDAO.findById(1000);
+//            System.out.println(customer.getFirstName() + " " + customer.getLastName());
 
+            Customer customer = customerDAO.findById(10000);
+            System.out.println(customer.getFirstName() + " " + customer.getLastName() + " " + customer.getEmail());
+
+            customer.setEmail("gwashington@wh.gov");
+            customerDAO.update(customer);
+            System.out.println(customer.getFirstName() + " " + customer.getLastName() + " " + customer.getEmail());
 
         }catch (SQLException e) {
             e.printStackTrace();
